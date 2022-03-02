@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
+    width: "90%",
     padding: 10,
     alignItems: "center",
     borderRadius: 5,
@@ -16,13 +16,18 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     width: "100%",
   },
+  container_FACEBOOK: {
+    backgroundColor: "#3b5998",
+  },
+    container_GOOGLE: {
+    backgroundColor: "#dd4b39",
+    },
   text: {
     fontWeight: "normal",
     color: "white",
   },
   text_PRIMARY: {
     fontWeight: "bold",
-    color: "white",
   },
   text_SECONDARY: {
     color: "black",
