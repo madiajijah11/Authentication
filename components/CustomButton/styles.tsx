@@ -9,19 +9,17 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   },
   container_PRIMARY: {
-    backgroundColor: "blue",
-    width: "60%",
+    backgroundColor: "#00a680",
   },
   container_SECONDARY: {
-    backgroundColor: "white",
     width: "100%",
   },
   container_FACEBOOK: {
     backgroundColor: "#3b5998",
   },
-    container_GOOGLE: {
+  container_GOOGLE: {
     backgroundColor: "#dd4b39",
-    },
+  },
   text: {
     fontWeight: "normal",
     color: "white",

@@ -4,33 +4,29 @@ import Logo from "../../assets/images/LogoDian.png";
 import CustomInput from "../../components/CustomInput/Index";
 import CustomButton from "../../components/CustomButton/Index";
 import styles from "./styles";
+import SocialSignInButtons from "../../components/SocialSignInButtons/Index";
+import { useNavigation } from "@react-navigation/native";
 
 const SignInScreen = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigation = useNavigation();
+
   const onPressSignIn = () => {
-    console.warn("Welcome Sarah");
+    navigation.navigate("Home");
   };
 
   const onPressForgotPassword = () => {
-    console.warn("Sarah forgot password");
-  };
-
-  const onPressSignInWithFacebook = () => {
-    console.warn("Sarah sign in with facebook");
-  };
-
-  const onPressSignInWithGoogle = () => {
-    console.warn("Sarah sign in with google");
+    navigation.navigate("ForgotPassword");
   };
 
   const onPressCreateAccount = () => {
-    console.warn("Sarah create account");
+    navigation.navigate("SignUp");
   };
 
   return (
-    <ScrollView showsVerticalScrollIndicator={false}> 
+    <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.container}>
         <Image source={Logo} style={styles.logo} resizeMode="contain" />
         <CustomInput
@@ -50,16 +46,7 @@ const SignInScreen = () => {
           onPress={onPressForgotPassword}
           type="SECONDARY"
         />
-        <CustomButton
-          text="Sign in with Facebook"
-          onPress={onPressSignInWithFacebook}
-          type="FACEBOOK"
-        />
-        <CustomButton
-          text="Sign in with Google"
-          onPress={onPressSignInWithGoogle}
-          type="GOOGLE"
-        />
+        <SocialSignInButtons />
         <CustomButton
           text="Don't have an account? Create new one."
           onPress={onPressCreateAccount}
