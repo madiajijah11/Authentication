@@ -4,12 +4,14 @@ import CustomInput from "../../components/CustomInput/Index";
 import CustomButton from "../../components/CustomButton/Index";
 import styles from "./styles";
 import { useNavigation } from "@react-navigation/native";
+import { useForm } from "react-hook-form";
 
 const ConfirmEmailScreen = () => {
-  const [code, setCode] = useState("");
   const navigation = useNavigation();
+  const { control, handleSubmit } = useForm();
 
-  const onPressRegister = () => {
+  const onPressRegister = (data: any) => {
+    console.warn(data);
     navigation.navigate("Home");
   };
 
@@ -26,13 +28,24 @@ const ConfirmEmailScreen = () => {
       <View style={styles.container}>
         <Text style={styles.title}>Confirm your email</Text>
         <CustomInput
-          placeholder="Enter your confirmation code"
-          value={code}
-          setValue={setCode}
+          name="code"
+          placeholder="Code"
+          control={control}
+          rules={{
+            required: "Code is required",
+            minLength: {
+              value: 1,
+              message: "Code should be more than 1 character",
+            },
+            maxLength: {
+              value: 6,
+              message: "Code should be less than 7 character",
+            },
+          }}
         />
         <CustomButton
           text="Register"
-          onPress={onPressRegister}
+          onPress={handleSubmit(onPressRegister)}
           type="PRIMARY"
         />
         <CustomButton
