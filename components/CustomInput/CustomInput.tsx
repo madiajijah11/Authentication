@@ -8,6 +8,7 @@ const CustomInput = ({
   name,
   placeholder,
   secureTextEntry,
+  keyboardType,
   rules = {},
 }: any) => {
   return (
@@ -30,6 +31,8 @@ const CustomInput = ({
               onBlur={onBlur}
               style={styles.input}
               secureTextEntry={secureTextEntry}
+              autoCapitalize="none"
+              keyboardType={keyboardType}
             />
           </View>
           {error && (

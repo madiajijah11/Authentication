@@ -55,6 +55,7 @@ const SignUpScreen = () => {
         <CustomInput
           name="email"
           placeholder="Email"
+          keyboardType="email-address"
           control={control}
           rules={{
             required: "Email is required",

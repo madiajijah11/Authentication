@@ -10,11 +10,9 @@ import HomeScreen from "../screens/HomeScreen/Index";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-interface NavigationProps {}
-
 const Stack = createNativeStackNavigator();
 
-const Navigation = (props: NavigationProps) => {
+const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }}>

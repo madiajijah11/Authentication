@@ -1,12 +1,19 @@
 import * as React from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import CustomButton from "../../components/CustomButton/Index";
 
-interface HomeScreenProps {}
+const HomeScreen = () => {
 
-const HomeScreen = (props: HomeScreenProps) => {
+   const navigation = useNavigation();
+   const SignOut = () => {
+     navigation.navigate("SignIn");
+   };
+
   return (
     <View style={styles.container}>
       <Text>HomeScreen</Text>
+      <CustomButton text="Sign Out" onPress={SignOut} type="PRIMARY" />
     </View>
   );
 };

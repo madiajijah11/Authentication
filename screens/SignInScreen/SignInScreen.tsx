@@ -14,6 +14,7 @@ const SignInScreen = () => {
 
   const onPressSignIn = (data: any) => {
     console.warn(data);
+    navigation.navigate("Home");
   };
 
   const onPressForgotPassword = () => {
